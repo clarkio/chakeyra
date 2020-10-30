@@ -1,0 +1,15 @@
+{
+  "name": "chakeyra",
+  "version": "0.1.0",
+  "description": "A live streaming game where the streamer and viewers in chat compete to typing challenges",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "streaming",
+    "game"
+  ],
+  "author": "Clarkio",
+  "license": "MIT"
+}
