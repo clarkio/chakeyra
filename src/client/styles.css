@@ -1,0 +1,24 @@
+.header { grid-area: header; }
+.menu { grid-area: menu; }
+.streamer { grid-area: streamer; }
+.streamer-words { grid-area: streamer-words; }
+.chat { grid-area: chat; }
+.chat-words { grid-area: chat-words; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header header'
+    'menu streamer streamer streamer chat chat chat'
+    'menu streamer-words streamer-words streamer-words chat-words chat-words chat-words';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}

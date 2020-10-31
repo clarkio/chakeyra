@@ -1,0 +1,15 @@
+☐ Finish parsing words from the hipsum API based on some configurable value @created(Fri 10/30/2020 - 05:28 PM)
+  - Thanks to MaryJoStaebler (MaryJustaBlurr)
+  - https://hipsum.co/api/?type=hipster-centric&sentences=1
+☐ At the end of the game show the winner (in the UI?) @created(Fri 10/30/2020 - 04:30 PM)
+☐ Create a UI for showing the streamer's words/phrases vs. the chat rooms words/phrases @created(Fri 10/30/2020 - 04:03 PM)
+☐ Filter out messages that are more than one character @created(Fri 10/30/2020 - 05:16 PM)
+  - Thanks to @t_13_r
+☐ [17:14] t_13_r: I think it could be interesting to have a constraint that two letters in a row can't be given by the same person in chat @created(Fri 10/30/2020 - 05:17 PM)
+☐ Implemented ability to indicate when the proper characters are entered for the streamer @created(Fri 10/30/2020 - 04:08 PM)
+☐ Implemented ability to indicate when the proper characters are entered for the chat room messages @created(Fri 10/30/2020 - 04:08 PM)
+
+Archive:
+  ✔ Connect to a chat room @created(Fri 10/30/2020 - 04:03 PM) @done(20-10-30 04:29 PM)
+  ✔ Listen for chat messages in a chat room @created(Fri 10/30/2020 - 04:02 PM) @done(20-10-30 04:29 PM)
+  ✔ Research a way to generate words/phrases @created(Fri 10/30/2020 - 04:03 PM) @done(Fri 10/30/2020 - 04:32 PM)

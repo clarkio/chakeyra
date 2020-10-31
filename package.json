@@ -11,5 +11,8 @@
     "game"
   ],
   "author": "Clarkio",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "comfy.js": "^1.1.5"
+  }
 }
