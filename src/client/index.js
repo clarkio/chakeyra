@@ -14,6 +14,7 @@ function getWords() {
   axios.get('https://hipsum.co/api/?type=hipster-centric&sentences=1')
     .then(response => {
       document.getElementById('streamer-words').innerHTML = response.data[0];
+      document.getElementById('chat-words').innerHTML = response.data[0];
       streamerWords = response.data[0];
       chatWords = response.data[0];
       streamerCharacters = streamerWords.split('');
