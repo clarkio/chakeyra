@@ -1,10 +1,12 @@
+☐ Emit game end with winner on socket @created(Sun 11/01/2020 - 01:34 PM)
 ☐ At the end of the game show the winner (in the UI?) @created(Fri 10/30/2020 - 04:30 PM)
-☐ Filter out messages that are more than one character @created(Fri 10/30/2020 - 05:16 PM)
-  - Thanks to @t_13_r
 ☐ [17:14] t_13_r: I think it could be interesting to have a constraint that two letters in a row can't be given by the same person in chat @created(Fri 10/30/2020 - 05:17 PM)
-☐ Implemented ability to indicate when the proper characters are entered for the chat room messages @created(Fri 10/30/2020 - 04:08 PM)
 
 Archive:
+  ✔ Fix bug to correctly show streamer words/progress and chat words/progress separately @created(Sun 11/01/2020 - 01:34 PM) @done(20-11-02 09:38)
+  ✔ Implemented ability to indicate when the proper characters are entered for the chat room messages @created(Fri 10/30/2020 - 04:08 PM) @done(20-11-01 13:34)
+  ✔ Filter out messages that are more than one character @created(Fri 10/30/2020 - 05:16 PM) @done(20-11-01 13:33)
+    - Thanks to @t_13_r
   ✔ Implemented ability to indicate when the proper characters are entered for the streamer @created(Fri 10/30/2020 - 04:08 PM) @done(20-11-01 10:46)
   ✔ Create a UI for showing the streamer's words/phrases vs. the chat rooms words/phrases @created(Fri 10/30/2020 - 04:03 PM) @done(20-11-01 10:46)
   ✔ Finish parsing words from the hipsum API based on some configurable value @created(Fri 10/30/2020 - 05:28 PM) @done(20-11-01 10:45)
