@@ -22,6 +22,7 @@ io.on('connection', (socket) => {
 
 const server = http.listen(port, function (error) {
   if (error) throw error;
+  console.log(`The server is running: http://localhost:${port}`)
 });
 
 chatCapture.connect(io);
