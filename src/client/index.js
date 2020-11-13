@@ -7,36 +7,72 @@ let streamerCompletedCharacters = '';
 let chatCompletedCharacters = '';
 let streamerDone = false;
 let chatDone = false;
+let keyCaptureInterval;
+let keyCaptureEnabled = true;
+let streamerFirstKey = true;
+let chatFirstKey = true;
+let streamerStartTime;
+let chatStartTime;
 
 function getWords() {
   startGameForChat();
   document.addEventListener('keydown', captureKey);
+  startKeyCaptureDelay();
+
   axios.get('https://hipsum.co/api/?type=hipster-centric&sentences=1')
     .then(response => {
       document.getElementById('start').disabled = true;
 
       streamerWords = response.data[0];
+      console.log('streamer: ', streamerWords.length);
       document.getElementById('streamer-words').innerHTML = streamerWords;
       streamerCharacters = streamerWords.split('');
 
       let tempChatWords = response.data[0];
-      // Live stream chat rooms don't allow messages with only a space " " so replace spaces with "_" to get around it
-      chatWords = tempChatWords.replace(/ /g, '_');
+      // TODO: make the slice amount configurable
+      chatWords = tempChatWords.split(' ').slice(0, 2).join('_');
+      console.log('chat: ', chatWords.length);
 
       document.getElementById('chat-words').innerHTML = chatWords
       chatCharacters = chatWords.split('');
     });
 }
 
+function startKeyCaptureDelay() {
+  keyCaptureInterval = setInterval(() => {
+    keyCaptureEnabled = !keyCaptureEnabled;
+  }, 350);
+}
+
 function stop() {
   document.removeEventListener('keydown', captureKey);
   document.getElementById('start').disabled = false;
+  clearInterval(keyCaptureInterval);
+  resetWordStuff();
+  streamerStartTime = undefined;
+  chatStartTime = undefined;
   // emit end game socket event
+}
+
+function resetWordStuff() {
+  chatWords = '';
+  chatCharacters = '';
+  streamerWords = '';
+  streamerCharacters = '';
+  streamerCompletedCharacters = '';
+  chatCompletedCharacters = '';
+  streamerFirstKey = true;
+  chatFirstKey = true;
 }
 
 function captureKey(event) {
   const key = event.key;
   const streamerWordsElement = document.getElementById('streamer-words');
+  if (streamerFirstKey) {
+    streamerFirstKey = false;
+    // start streamer timer
+    streamerStartTime = Date.now();
+  }
   if (key === streamerCharacters[0]) {
     streamerCompletedCharacters += streamerCharacters[0];
     streamerCharacters.shift();
@@ -46,6 +82,10 @@ function captureKey(event) {
 
     streamerWordsElement.innerHTML = updatedWords;
     streamerDone = streamerWords.length === 0;
+    if (streamerDone) {
+      streamerFirstKey = true;
+      console.log(`Streamer finished in ${(Date.now() - chatStartTime) / 1000} seconds`);
+    }
   } else {
     const updatedWords = `<span class="correct">${streamerCompletedCharacters}</span><span class="incorrect">${streamerWords.substr(0, 1)}</span>${streamerWords.substr(1)}`;
     streamerWordsElement.innerHTML = updatedWords;
