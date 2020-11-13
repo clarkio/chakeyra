@@ -1,3 +1,46 @@
+☐ Stop listening and logging chat keys when game is finished or stopped @created(Fri 11/13/2020 - 04:46 PM)
+
+[14:25] officialrossi: @Clarkio Add a delay timer to your clicks so when your sentence finish the timer still has to end on 0 before chat is done else you lose
+
+[15:14] OlafBerserker77: HOw about for every letter chat gets right, remove 1 letter from streamer
+
+[14:53] t_13_r: The streamer shouldn’t see the words in advance. Maybe it should be revealed letter by letter?
+
+[14:52] MarcusVoiceProgrammer: Maybe you should try text-to-speech
+  - Make the streamer use speech recognition to enter letters?
+  - What about words that are difficult to pronounce and capture via speech recognition
+  - Streamer could spell it out letter by letter instead (t_13_r)
+
+[15:31] ElectricHavoc: Cooldown per user of x sec to encourage teamwork?
+
+[15:47] iDreamInMemes: assign each person an index
+
+[15:52] MaryJoStaebler: you should use voice announce each letter as we type
+
+[15:54] t_13_r: it'd be interesting to try out with you having to do letter-by-letter speech recognition. You'd get to work against speech recognition the way chat needs to fight having to use chat Sure, it's not a typing game anymore :)
+
+☐ All contributors bot @created(Fri 11/06/2020 - 04:15 PM)
+☐ [16:00] officialrossi: If chat wins, it should show the participants names with fireworks as an overlay LUL @created(Fri 11/06/2020 - 04:01 PM)
+☐ Don't allow streamer to start until chat has a chance to start attempting the first character @created(Fri 11/06/2020 - 03:46 PM)
+☐ [15:24] ToeFrog: Needs a score board @created(Fri 11/06/2020 - 03:24 PM)
+☐ [13:50] MarcusVoiceProgrammer: Maybe you could have a username flash up in the UI. And then that person has to type the next word @created(Fri 11/06/2020 - 01:52 PM)
+  - This could maybe lead to have viewers opt-in to join the game !join
+☐ [13:52] MaryJoStaebler: Could have chat peep vs another chat peep @created(Fri 11/06/2020 - 01:52 PM)
+☐ [13:50] MaryJoStaebler: Instead of one letter, I write a whole word @created(Fri 11/06/2020 - 01:50 PM)
+  - Maybe use this approach to speed up chats ability to complete/win
+☐ Make words source configurable @created(Fri 11/06/2020 - 01:48 PM)
+  - Maybe different words API's
+  - Maybe use a canned list of words local to the streamer
+☐ Allow amount of words to be configurable for each team @created(Fri 11/06/2020 - 01:47 PM)
+  ☐ Chat words @created(Fri 11/06/2020 - 01:48 PM)
+  ☐ Streamer words @created(Fri 11/06/2020 - 01:48 PM)
+☐ [13:44] shaggieh: can it !fart everytime we get a letter wrong? @created(Fri 11/06/2020 - 01:45 PM)
+  - Have it play a (configurable) sound when an incorrect character is entered
+☐ [13:44] chicken_man: maybe instead of replacing spaces with underscores and removing periods, you should just "give" the chat the space character @created(Fri 11/06/2020 - 01:45 PM)
+  - If next character is a space just increment to the next one
+☐ IDEA: [13:43] OlafBerserker77: should allow all letters to apply, even out of order @created(Fri 11/06/2020 - 01:44 PM)
+☐ [13:42] MaryJoStaebler: Could you show the letters coming in like a ticker tape @created(Fri 11/06/2020 - 01:43 PM)
+☐ Remove "." from chat words since that can't be entered @created(Fri 11/06/2020 - 01:42 PM)
 ☐ Emit game end with winner on socket @created(Sun 11/01/2020 - 01:34 PM)
 ☐ At the end of the game show the winner (in the UI?) @created(Fri 10/30/2020 - 04:30 PM)
 ☐ [17:14] t_13_r: I think it could be interesting to have a constraint that two letters in a row can't be given by the same person in chat @created(Fri 10/30/2020 - 05:17 PM)
