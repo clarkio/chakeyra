@@ -79,6 +79,8 @@ function resetGame() {
   chatCompletedCharacters = '';
   streamerFirstKey = true;
   chatFirstKey = true;
+  streamerDone = false;
+  chatDone = false;
   document.getElementById('streamer-timer').innerHTML = '';
   document.getElementById('chat-timer').innerHTML = '';
 }
