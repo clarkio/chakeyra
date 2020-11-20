@@ -1,8 +1,12 @@
-✔ Stop listening and logging chat keys when game is finished or stopped @created(Fri 11/13/2020 - 04:46 PM) @done(Fri 11/20/2020 - 02:37 PM)
-
+☐ Display a timer for chat on screen @created(Fri 11/20/2020 - 04:28 PM)
+☐ Display a timer for the streamer on screen @created(Fri 11/20/2020 - 04:28 PM)
+☐ Sometimes there's a bug in calculating the streamer time where it's definitely lower than expected @created(Fri 11/20/2020 - 02:42 PM)
 [13:50] chicken_man: how about add one letter for the streamer instead of remove?
 
-[14:25] officialrossi: @Clarkio Add a delay timer to your clicks so when your sentence finish the timer still has to end on 0 before chat is done else you lose
+[14:53] NickAndMartinLearnStuff: if you wanted regex to capture the first word ^\w+ then you wouldn't have to worry about spaces or special characters
+
+const re = /^\w+/
+regex.test(value)
 
 [15:14] OlafBerserker77: HOw about for every letter chat gets right, remove 1 letter from streamer
 
@@ -48,6 +52,8 @@
 ☐ [17:14] t_13_r: I think it could be interesting to have a constraint that two letters in a row can't be given by the same person in chat @created(Fri 10/30/2020 - 05:17 PM)
 
 Archive:
+  ✔ Add mechanism to have viewers in chat send a command to opt-in for participating in the game @created(Fri 11/20/2020 - 02:53 PM) @done(Fri 11/20/2020 - 04:28 PM)
+  ✔ Stop listening and logging chat keys when game is finished or stopped @created(Fri 11/13/2020 - 04:46 PM) @done(Fri 11/20/2020 - 02:37 PM)
   ✔ Fix bug to correctly show streamer words/progress and chat words/progress separately @created(Sun 11/01/2020 - 01:34 PM) @done(20-11-02 09:38)
   ✔ Implemented ability to indicate when the proper characters are entered for the chat room messages @created(Fri 10/30/2020 - 04:08 PM) @done(20-11-01 13:34)
   ✔ Filter out messages that are more than one character @created(Fri 10/30/2020 - 05:16 PM) @done(20-11-01 13:33)

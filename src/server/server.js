@@ -18,6 +18,9 @@ io.on('connection', (socket) => {
   socket.on('startgame', () => {
     chatCapture.startGame();
   });
+  socket.on('endgame', () => {
+    chatCapture.endGame();
+  });
 });
 
 const server = http.listen(port, function (error) {

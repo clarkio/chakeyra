@@ -1,6 +1,10 @@
 // https://hipsum.co/api/?type=hipster-centric&sentences=1
 
-let chatWords = '';
+const socket = io();
+
+// let chatWords = '';
+let chatWords = [];
+let chatCompletedWords = [];
 let chatCharacters = '';
 let streamerWords = '';
 let streamerCompletedCharacters = '';
@@ -25,18 +29,21 @@ function startGame() {
     .then(response => {
       document.getElementById('start').disabled = true;
 
-      streamerWords = response.data[0];
+      streamerWords = response.data[0].replace('.', '');
       console.log('streamer: ', streamerWords.length);
       document.getElementById('streamer-words').innerHTML = streamerWords;
       streamerCharacters = streamerWords.split('');
 
-      let tempChatWords = response.data[0];
+      // let tempChatWords = response.data[0];
+      let tempChatWords = streamerWords;
       // TODO: make the slice amount configurable
-      chatWords = tempChatWords.split(' ').slice(0, 2).join('_');
+      // chatWords = tempChatWords.split(' ').slice(0, 2).join('_');
+      // The following is if we want to try and let chat enter full words instead
+      chatWords = tempChatWords.split(' ');
       console.log('chat: ', chatWords.length);
 
-      document.getElementById('chat-words').innerHTML = chatWords
-      chatCharacters = chatWords.split('');
+      document.getElementById('chat-words').innerHTML = chatWords.join(' ');
+      // chatCharacters = chatWords.split('');
     });
 }
 
@@ -54,11 +61,13 @@ function stop() {
   streamerStartTime = undefined;
   chatStartTime = undefined;
   isGameEnabled = false;
-  // emit end game socket event
+  socket.emit('endgame');
 }
 
 function resetWordStuff() {
-  chatWords = '';
+  // chatWords = '';
+  chatWords = [];
+  chatCompletedWords = [];
   chatCharacters = '';
   streamerWords = '';
   streamerCharacters = '';
