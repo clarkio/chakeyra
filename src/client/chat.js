@@ -1,11 +1,16 @@
 const socket = io();
 
 socket.on('chatkey', (key) => {
+  if (!isGameEnabled) {
+    return;
+  }
+
   if (chatFirstKey) {
     chatFirstKey = false;
     // start chat timer
     chatStartTime = Date.now();
   }
+
   const chatWordsElement = document.getElementById('chat-words');
   console.log(key);
   if (key === chatCharacters[0]) {

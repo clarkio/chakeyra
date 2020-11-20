@@ -13,8 +13,10 @@ let streamerFirstKey = true;
 let chatFirstKey = true;
 let streamerStartTime;
 let chatStartTime;
+let isGameEnabled = false;
 
-function getWords() {
+function startGame() {
+  isGameEnabled = true;
   startGameForChat();
   document.addEventListener('keydown', captureKey);
   startKeyCaptureDelay();
@@ -51,6 +53,7 @@ function stop() {
   resetWordStuff();
   streamerStartTime = undefined;
   chatStartTime = undefined;
+  isGameEnabled = false;
   // emit end game socket event
 }
 
