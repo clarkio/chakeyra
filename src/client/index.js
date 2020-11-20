@@ -3,24 +3,28 @@
 const socket = io();
 
 // let chatWords = '';
-let chatWords = [];
-let chatCompletedWords = [];
-let chatCharacters = '';
-let streamerWords = '';
-let streamerCompletedCharacters = '';
-let chatCompletedCharacters = '';
-let streamerDone = false;
-let chatDone = false;
-let keyCaptureInterval;
-let keyCaptureEnabled = true;
-let streamerFirstKey = true;
-let chatFirstKey = true;
-let streamerStartTime;
-let chatStartTime;
-let isGameEnabled = false;
+let chatWords = [],
+  chatCompletedWords = [],
+  chatCharacters = '',
+  streamerWords = '',
+  streamerCompletedCharacters = '',
+  chatCompletedCharacters = '',
+  streamerDone = false,
+  chatDone = false,
+  keyCaptureInterval,
+  keyCaptureEnabled = true,
+  streamerFirstKey = true,
+  chatFirstKey = true,
+  streamerStartTime,
+  chatStartTime,
+  isGameEnabled = false,
+  streamerTimer,
+  chatTimer;
 
 function startGame() {
   isGameEnabled = true;
+  updateTimers();
+
   startGameForChat();
   document.addEventListener('keydown', captureKey);
   startKeyCaptureDelay();
@@ -57,14 +61,14 @@ function stop() {
   document.removeEventListener('keydown', captureKey);
   document.getElementById('start').disabled = false;
   clearInterval(keyCaptureInterval);
-  resetWordStuff();
   streamerStartTime = undefined;
   chatStartTime = undefined;
   isGameEnabled = false;
+  resetGame();
   socket.emit('endgame');
 }
 
-function resetWordStuff() {
+function resetGame() {
   // chatWords = '';
   chatWords = [];
   chatCompletedWords = [];
@@ -75,6 +79,8 @@ function resetWordStuff() {
   chatCompletedCharacters = '';
   streamerFirstKey = true;
   chatFirstKey = true;
+  document.getElementById('streamer-timer').innerHTML = '';
+  document.getElementById('chat-timer').innerHTML = '';
 }
 
 function captureKey(event) {
@@ -96,10 +102,26 @@ function captureKey(event) {
     streamerDone = streamerWords.length === 0;
     if (streamerDone) {
       streamerFirstKey = true;
-      console.log(`Streamer finished in ${(Date.now() - chatStartTime) / 1000} seconds`);
+      console.log(`Streamer finished in ${(Date.now() - streamerStartTime) / 1000} seconds`);
     }
   } else {
     const updatedWords = `<span class="correct">${streamerCompletedCharacters}</span><span class="incorrect">${streamerWords.substr(0, 1)}</span>${streamerWords.substr(1)}`;
     streamerWordsElement.innerHTML = updatedWords;
   }
+}
+
+function updateTimers() {
+  if (chatDone && streamerDone) return;
+
+  if (streamerStartTime && !streamerDone) {
+    streamerTimer = (Date.now() - streamerStartTime) / 1000;
+    document.getElementById('streamer-timer').innerHTML = streamerTimer;
+  }
+
+  if (chatStartTime && !chatDone) {
+    chatTimer = (Date.now() - chatStartTime) / 1000;
+    document.getElementById('chat-timer').innerHTML = chatTimer;
+  }
+
+  window.requestAnimationFrame(updateTimers);
 }

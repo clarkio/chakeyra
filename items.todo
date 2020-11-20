@@ -1,5 +1,5 @@
-☐ Display a timer for chat on screen @created(Fri 11/20/2020 - 04:28 PM)
-☐ Display a timer for the streamer on screen @created(Fri 11/20/2020 - 04:28 PM)
+☐ There may be a bug causing a delay in reading a word from chat and it showing up as correct in the game/UI @created(Fri 11/20/2020 - 05:15 PM)
+☐ Show some kind of indication to confirm a viewer joined the game @created(Fri 11/20/2020 - 05:04 PM)
 ☐ Sometimes there's a bug in calculating the streamer time where it's definitely lower than expected @created(Fri 11/20/2020 - 02:42 PM)
 [13:50] chicken_man: how about add one letter for the streamer instead of remove?
 
@@ -52,6 +52,8 @@ regex.test(value)
 ☐ [17:14] t_13_r: I think it could be interesting to have a constraint that two letters in a row can't be given by the same person in chat @created(Fri 10/30/2020 - 05:17 PM)
 
 Archive:
+  ✔ Display a timer for chat on screen @created(Fri 11/20/2020 - 04:28 PM) @done(Fri 11/20/2020 - 05:16 PM)
+  ✔ Display a timer for the streamer on screen @created(Fri 11/20/2020 - 04:28 PM) @done(Fri 11/20/2020 - 05:16 PM)
   ✔ Add mechanism to have viewers in chat send a command to opt-in for participating in the game @created(Fri 11/20/2020 - 02:53 PM) @done(Fri 11/20/2020 - 04:28 PM)
   ✔ Stop listening and logging chat keys when game is finished or stopped @created(Fri 11/13/2020 - 04:46 PM) @done(Fri 11/20/2020 - 02:37 PM)
   ✔ Fix bug to correctly show streamer words/progress and chat words/progress separately @created(Sun 11/01/2020 - 01:34 PM) @done(20-11-02 09:38)
