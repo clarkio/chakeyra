@@ -1,8 +1,11 @@
 const ComfyJS = require('comfy.js');
+const { getUserProfile } = require('./TwitchHelpers')
 
 let gameStarted = false;
 let serverSocket;
 let players = [];
+let usersInfos = [];
+let TwitchAuthBearerToken;
 
 // regular expression to capture first word from chat message from viewer
 // regex provided by @NickAndMartinLearnStuff
@@ -15,11 +18,12 @@ module.exports = {
   endGame
 };
 
-function connect(server) {
+function connect(server, channel, accessToken) {
   serverSocket = server;
+  TwitchAuthBearerToken = accessToken;
   ComfyJS.onChat = chatHandler;
   ComfyJS.onCommand = commandHandler;
-  ComfyJS.Init('clarkio');
+  ComfyJS.Init(channel);
 }
 
 function startGame() {
@@ -46,10 +50,22 @@ function chatHandler(user, message, flags, self, extra) {
 
 function commandHandler(user, command, message, flags, extra) {
   if (command === 'join' && !players.find(player => player === user)) {
+    getUserInfo(extra.userId)
     players.push(user);
   }
 }
 
 function sendChatKey(message) {
   serverSocket.emit('chatkey', message);
+}
+
+async function getUserInfo(userId) {
+   await getUserProfile(userId, TwitchAuthBearerToken)
+    .then(user => {
+      usersInfos.push(user);
+      serverSocket.emit('newPlayerInfo', user, usersInfos)
+    })
+    .catch(err => {
+      console.log(err);
+    });
 }

@@ -37,6 +37,40 @@ socket.on('chatkey', (word) => {
   }
 });
 
+socket.on('newPlayerInfo', (userData, userList) => {
+  var playerList = document.getElementById('playerList');
+  var img = document.createElement('img');
+  img.className = 'playerImage';
+  img.src = userData.profileImageUrl;
+  if (userList.length > 0 && userData !== undefined) {
+    var profileImageContainer = document.createElement('div');
+    profileImageContainer.className = 'profileImageContainer';
+
+    var playerCount = document.getElementById('playerCountInfo');
+    playerCount.innerText = "";
+    playerCount.innerText = userList.length < 2 ? `${userList.length} player` : `${userList.length} players`
+
+    var nameTag = document.createElement('span');
+    nameTag.className = 'nameTag';
+    nameTag.innerText = userData.displayName;
+
+    var img = document.createElement('img');
+    img.className = 'playerImage';
+    img.src = userData.profileImageUrl;
+    img.alt = userData.displayName
+    img.title = userData.displayName
+    profileImageContainer.appendChild(img);
+    profileImageContainer.appendChild(nameTag);
+    playerList.appendChild(profileImageContainer);
+  }
+  else if (userList.length === 0) {
+    var elementsToDelete = playerList.getElementsByClassName('profileImageContainer');
+    while (elementsToDelete[0]) {
+      elementsToDelete[0].parentNode.removeChild(elementsToDelete[0]);
+    }
+  }
+});
+
 function startGameForChat() {
   socket.emit('startgame');
 }

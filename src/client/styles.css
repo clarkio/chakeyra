@@ -30,3 +30,25 @@
 .incorrect {
   background-color: red;
 }
+
+.playerImage {
+  border-radius: 50px;
+  width: 70px;
+  margin-right: 10px;
+}
+ 
+div.players > h4 {
+  color: grey;
+  font-size: 0.5em;
+  margin: 5px;
+  padding: 5px;
+}
+
+.profileImageContainer {
+  margin: 10px;
+  font-size: 0.5em;
+  padding: 15px;
+  width: 70px;
+  display: inline-block;
+  text-align: center;
+}
