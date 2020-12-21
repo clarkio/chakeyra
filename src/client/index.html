@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +14,13 @@
 <body>
   <div class="grid-container">
     <div class="header">Welcome to Chakeyra</div>
+    <div class="player-area" id="player-area">Players:
+      <div class="playerCount" id="playerCount">
+        <span id="playerCountInfo">No chat players</span>
+      </div>
+      <div class="players" id="playerList">
+      </div>
+    </div>
     <div class="menu">
       Menu<br>
       <p><button onclick="startGame()" id="start">Start</button></p>
@@ -25,16 +33,10 @@
     </div>
     <div class="chat">
       <h3>Chat Words</h3>
-      <div class="playerCount" id="playerCount">
-        <span id="playerCountInfo">No chat players</span>
-      </div>
-      <div class="players" id="playerList">
-      </div>
+      <label id="chat-timer"></label>
     </div>
-    <label id="chat-timer"></label>
-  </div>
-  <div id="streamer-words" class="streamer-words"></div>
-  <div id="chat-words" class="chat-words"></div>
+    <div id="streamer-words" class="streamer-words"></div>
+    <div id="chat-words" class="chat-words"></div>
   </div>
 </body>
 <script src="index.js"></script>

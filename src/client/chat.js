@@ -38,7 +38,7 @@ socket.on('chatkey', (word) => {
 });
 
 socket.on('newPlayerInfo', (userData, userList) => {
-  var playerList = document.getElementById('playerList');
+  var playerList = document.getElementById('player-area');
   var img = document.createElement('img');
   img.className = 'playerImage';
   img.src = userData.profileImageUrl;
@@ -50,7 +50,7 @@ socket.on('newPlayerInfo', (userData, userList) => {
     playerCount.innerText = "";
     playerCount.innerText = userList.length < 2 ? `${userList.length} player` : `${userList.length} players`
 
-    var nameTag = document.createElement('span');
+    var nameTag = document.createElement('div');
     nameTag.className = 'nameTag';
     nameTag.innerText = userData.displayName;
 
