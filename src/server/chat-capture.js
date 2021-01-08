@@ -48,10 +48,17 @@ function chatHandler(user, message, flags, self, extra) {
   }
 }
 
+
 function commandHandler(user, command, message, flags, extra) {
   if (command === 'join' && !players.find(player => player === user)) {
-    getUserInfo(extra.userId)
-    players.push(user);
+    var user = extra.userId;
+    // check if the array already has the user
+    let userAlreadyAPlayer = usersInfos.find(u => u.userId == user);
+    if (userAlreadyAPlayer) {
+      console.log(`user infos already has ${user}`)
+    } else {
+      getUserInfo(user)
+    }
   }
 }
 
@@ -60,12 +67,15 @@ function sendChatKey(message) {
 }
 
 async function getUserInfo(userId) {
-   await getUserProfile(userId, TwitchAuthBearerToken)
+  var user = await getUserProfile(userId, TwitchAuthBearerToken)
     .then(user => {
       usersInfos.push(user);
+      players.push(user);
       serverSocket.emit('newPlayerInfo', user, usersInfos)
+      return user;
     })
     .catch(err => {
       console.log(err);
     });
+  return user;
 }
