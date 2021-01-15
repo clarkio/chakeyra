@@ -56,6 +56,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://c-j.tech"><img src="https://avatars0.githubusercontent.com/u/3969086?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Chris Jones</b></sub></a><br /><a href="https://github.com/clarkio/chakeyra/commits?author=cmjchrisjones" title="Code">💻</a> <a href="#ideas-cmjchrisjones" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/Daggersoath"><img src="https://avatars1.githubusercontent.com/u/9066690?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Daggersoath</b></sub></a><br /><a href="#ideas-Daggersoath" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/SSobus"><img src="https://avatars1.githubusercontent.com/u/1770696?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ssobus</b></sub></a><br /><a href="#ideas-ssobus" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 
