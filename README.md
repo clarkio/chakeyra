@@ -1,6 +1,6 @@
 # chakeyra
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 A live streaming game where the streamer and viewers in chat compete to typing challenges
 
@@ -54,12 +54,14 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://c-j.tech"><img src="https://avatars0.githubusercontent.com/u/3969086?v=4" width="100px;" alt=""/><br /><sub><b>Chris Jones</b></sub></a><br /><a href="https://github.com/clarkio/chakeyra/commits?author=cmjchrisjones" title="Code">💻</a> <a href="#ideas-cmjchrisjones" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://c-j.tech"><img src="https://avatars0.githubusercontent.com/u/3969086?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Chris Jones</b></sub></a><br /><a href="https://github.com/clarkio/chakeyra/commits?author=cmjchrisjones" title="Code">💻</a> <a href="#ideas-cmjchrisjones" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/Daggersoath"><img src="https://avatars1.githubusercontent.com/u/9066690?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Daggersoath</b></sub></a><br /><a href="#ideas-Daggersoath" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
