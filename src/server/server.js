@@ -3,10 +3,13 @@ const path = require('path');
 const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
-
 const chatCapture = require('./chat-capture');
-
+const { getTwitchAccessToken } = require('./TwitchHelpers');
+const dotenv = require('dotenv');
 const port = process.env.PORT || 3000;
+const channel = process.env.TWITCH_CHANNEL_ID;
+
+dotenv.config();
 
 app.use(express.static(path.resolve(`${__dirname}`, '../client')));
 
@@ -23,11 +26,15 @@ io.on('connection', (socket) => {
   });
 });
 
-const server = http.listen(port, function (error) {
-  if (error) throw error;
-  console.log(`The server is running: http://localhost:${port}`)
+getTwitchAccessToken().then(token => {
+  let accessToken;
+  const server = http.listen(port, function (error) {
+    if (error) throw error;
+    console.clear();
+    console.log(`The server is running: http://localhost:${port}`)
+    console.log(`Connecting to channel: ${channel}`)
+    accessToken = token.data.access_token;
+    chatCapture.connect(io, channel, accessToken);
+    module.exports = server;
+  });
 });
-
-chatCapture.connect(io);
-
-module.exports = server;

@@ -13,11 +13,26 @@ This game was built with 💙 live on stream with the programming community. Com
 
 - Node.js: [nvm](https://github.com/nvm-sh/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows)
 
-### Getting Started
+### Update/create your .env file
+
+In the root of the repo, you'll see an example [.env.example](.env.example) file, copy this, and create a `.env` file
+
+Fill in the following fields in your new `.env` file:
+
+- TWITCH_CLIENT_ID
+- TWITCH_CLIENT_SECRET
+- TWITCH_CHANNEL_ID
+
+### Getting Started (traditional)
 
 1. Open your terminal/command line tool
 1. Run `npm install`
 1. Run `npm start`
+1. Open your browser to [http://localhost:3000/](http://localhost:3000/)
+
+### Getting Started (Docker)
+1. Open your terminal/command line tool
+1. Run `docker-compose up`
 1. Open your browser to [http://localhost:3000/](http://localhost:3000/)
 
 ### Playing the Game

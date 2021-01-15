@@ -1,4 +1,5 @@
 .header { grid-area: header; }
+.player-area { grid-area: player-area; }
 .menu { grid-area: menu; }
 .streamer { grid-area: streamer; }
 .streamer-words { grid-area: streamer-words; }
@@ -9,6 +10,7 @@
   display: grid;
   grid-template-areas:
     'header header header header header header header'
+    'player-area player-area player-area player-area player-area player-area player-area'
     'menu streamer streamer streamer chat chat chat'
     'menu streamer-words streamer-words streamer-words chat-words chat-words chat-words';
   grid-gap: 10px;
@@ -29,4 +31,30 @@
 
 .incorrect {
   background-color: red;
+}
+
+.playerImage {
+  border-radius: 50px;
+  width: 70px;
+  margin-right: 10px;
+}
+ 
+div.players > h4 {
+  color: grey;
+  font-size: 0.5em;
+  margin: 5px;
+  padding: 5px;
+}
+
+.profileImageContainer {
+  margin: 10px;
+  font-size: 0.5em;
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+}
+
+.nameTag {
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
