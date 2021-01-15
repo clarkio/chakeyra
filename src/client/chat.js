@@ -1,4 +1,4 @@
-
+let playCount = 0;
 
 socket.on('chatkey', (word) => {
   if (!isGameEnabled) {
@@ -37,38 +37,30 @@ socket.on('chatkey', (word) => {
   }
 });
 
-socket.on('newPlayerInfo', (userData, userList) => {
-  var playerList = document.getElementById('player-area');
-  var img = document.createElement('img');
+socket.on('newPlayer', (userInfo) => {
+  if (!userInfo) return;
+
+  playCount++
+  const playerList = document.getElementById('player-area');
+
+  const profileImageContainer = document.createElement('div');
+  profileImageContainer.className = 'profileImageContainer';
+
+  const playerCount = document.getElementById('playerCountInfo');
+  playerCount.innerText = playCount < 2 ? `${playCount} player` : `${playCount} players`;
+
+  const nameTag = document.createElement('div');
+  nameTag.className = 'nameTag';
+  nameTag.innerText = userInfo.displayName;
+
+  const img = document.createElement('img');
   img.className = 'playerImage';
-  img.src = userData.profileImageUrl;
-  if (userList.length > 0 && userData !== undefined) {
-    var profileImageContainer = document.createElement('div');
-    profileImageContainer.className = 'profileImageContainer';
-
-    var playerCount = document.getElementById('playerCountInfo');
-    playerCount.innerText = "";
-    playerCount.innerText = userList.length < 2 ? `${userList.length} player` : `${userList.length} players`
-
-    var nameTag = document.createElement('div');
-    nameTag.className = 'nameTag';
-    nameTag.innerText = userData.displayName;
-
-    var img = document.createElement('img');
-    img.className = 'playerImage';
-    img.src = userData.profileImageUrl;
-    img.alt = userData.displayName
-    img.title = userData.displayName
-    profileImageContainer.appendChild(img);
-    profileImageContainer.appendChild(nameTag);
-    playerList.appendChild(profileImageContainer);
-  }
-  else if (userList.length === 0) {
-    var elementsToDelete = playerList.getElementsByClassName('profileImageContainer');
-    while (elementsToDelete[0]) {
-      elementsToDelete[0].parentNode.removeChild(elementsToDelete[0]);
-    }
-  }
+  img.src = userInfo.profileImageUrl;
+  img.alt = userInfo.displayName;
+  img.title = userInfo.displayName;
+  profileImageContainer.appendChild(img);
+  profileImageContainer.appendChild(nameTag);
+  playerList.appendChild(profileImageContainer);
 });
 
 function startGameForChat() {

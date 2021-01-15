@@ -1,3 +1,6 @@
+☐ Maybe add a button to ope@created(Fri 01/15/2021 - 03:28 PM)
+☐ To help with reducing overhead when retrieving user profile data from Twitch we could cache it for future reference as recommended by [15:10] DaggersOath: Actually, we could make an API cache, so that when we clear stuff we dont need to refetch if people rejoin @created(Fri 01/15/2021 - 03:12 PM)
+☐ Add this as an alias to join the game: [13:41] lukeocodes: !play @created(Fri 01/15/2021 - 01:41 PM)
 ☐ There may be a bug causing a delay in reading a word from chat and it showing up as correct in the game/UI @created(Fri 11/20/2020 - 05:15 PM)
   - This seems to only happen after playing the game once, pressing "stop" and the pressing "start" to begin a new round
 ☐ [17:20] cmjchrisjones: would it be worth logging who's messages are coming in as well? @created(Fri 11/20/2020 - 05:21 PM)
