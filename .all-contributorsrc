@@ -14,6 +14,15 @@
         "code",
         "ideas"
       ]
+    },
+    {
+      "login": "ssobus",
+      "name": "ssobus",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1770696?v=4",
+      "profile": "https://github.com/SSobus",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
