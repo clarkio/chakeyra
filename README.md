@@ -1,4 +1,7 @@
 # chakeyra
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 A live streaming game where the streamer and viewers in chat compete to typing challenges
 
 Thanks to @timothee for the name of this game 😆🙏
@@ -41,3 +44,22 @@ Fill in the following fields in your new `.env` file:
 1. You (the streamer) will receive a set of words and can begin typing them out character by character
 1. Your chat will receive a smaller set of words and once they send single character messages to your chat room it will validate them again their separate words
 1. The first to complete every character wins
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://c-j.tech"><img src="https://avatars0.githubusercontent.com/u/3969086?v=4" width="100px;" alt=""/><br /><sub><b>Chris Jones</b></sub></a><br /><a href="https://github.com/clarkio/chakeyra/commits?author=cmjchrisjones" title="Code">💻</a> <a href="#ideas-cmjchrisjones" title="Ideas, Planning, & Feedback">🤔</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
