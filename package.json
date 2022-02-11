@@ -14,7 +14,7 @@
   "author": "Clarkio",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.21.3",
     "comfy.js": "^1.1.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
