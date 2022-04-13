@@ -26,15 +26,17 @@ io.on('connection', (socket) => {
   });
 });
 
-getTwitchAccessToken().then(token => {
-  let accessToken;
-  const server = http.listen(port, function (error) {
-    if (error) throw error;
-    console.clear();
-    console.log(`The server is running: http://localhost:${port}`)
-    console.log(`Connecting to channel: ${channel}`)
-    accessToken = token.data.access_token;
-    chatCapture.connect(io, channel, accessToken);
-    module.exports = server;
-  });
-});
+getTwitchAccessToken()
+  .then((token) => {
+    let accessToken;
+    const server = http.listen(port, function (error) {
+      if (error) throw error;
+      console.clear();
+      console.log(`The server is running: http://localhost:${port}`);
+      console.log(`Connecting to channel: ${channel}`);
+      accessToken = token.data.access_token;
+      chatCapture.connect(io, channel, accessToken);
+      module.exports = server;
+    });
+  })
+  .catch((error) => console.error(error));

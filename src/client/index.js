@@ -29,10 +29,12 @@ function startGame() {
   document.addEventListener('keydown', captureKey);
   startKeyCaptureDelay();
 
-  axios.get('https://hipsum.co/api/?type=hipster-centric&sentences=1')
-    .then(response => {
+  axios
+    .get('https://hipsum.co/api/?type=hipster-centric&sentences=1')
+    .then((response) => {
       document.getElementById('start').disabled = true;
 
+      // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
       streamerWords = response.data[0].replace('.', '');
       console.log('streamer: ', streamerWords.length);
       document.getElementById('streamer-words').innerHTML = streamerWords;
@@ -104,10 +106,17 @@ function captureKey(event) {
     streamerDone = streamerWords.length === 0;
     if (streamerDone) {
       streamerFirstKey = true;
-      console.log(`Streamer finished in ${(Date.now() - streamerStartTime) / 1000} seconds`);
+      console.log(
+        `Streamer finished in ${
+          (Date.now() - streamerStartTime) / 1000
+        } seconds`
+      );
     }
   } else {
-    const updatedWords = `<span class="correct">${streamerCompletedCharacters}</span><span class="incorrect">${streamerWords.substr(0, 1)}</span>${streamerWords.substr(1)}`;
+    const updatedWords = `<span class="correct">${streamerCompletedCharacters}</span><span class="incorrect">${streamerWords.substr(
+      0,
+      1
+    )}</span>${streamerWords.substr(1)}`;
     streamerWordsElement.innerHTML = updatedWords;
   }
 }
