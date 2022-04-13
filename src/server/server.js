@@ -1,6 +1,9 @@
 const express = require('express');
 const path = require('path');
+const helmet = require('helmet');
+// deepcode ignore UseCsurfForExpress: not publicly hosting this app on the internet to allow for CSRF based requests/attacks
 const app = express();
+// deepcode ignore HttpToHttps: running this locally and not publicly on the internet
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 const chatCapture = require('./chat-capture');
@@ -11,9 +14,15 @@ const channel = process.env.TWITCH_CHANNEL_ID;
 
 dotenv.config();
 
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+    crossOriginEmbedderPolicy: false,
+  })
+);
 app.use(express.static(path.resolve(`${__dirname}`, '../client')));
 
-app.get('/', function (req, res) {
+app.get('/', function (_req, res) {
   res.render('/index');
 });
 

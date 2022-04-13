@@ -35,7 +35,7 @@ function startGame() {
       document.getElementById('start').disabled = true;
 
       // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-      streamerWords = response.data[0].replace('.', '');
+      streamerWords = DOMPurify.sanitize(response.data[0]).replace('.', '');
       console.log('streamer: ', streamerWords.length);
       document.getElementById('streamer-words').innerHTML = streamerWords;
       streamerCharacters = streamerWords.split('');
@@ -102,7 +102,7 @@ function captureKey(event) {
 
     const updatedWords = `<span class="correct">${streamerCompletedCharacters}</span>${streamerWords}`;
 
-    streamerWordsElement.innerHTML = updatedWords;
+    streamerWordsElement.innerHTML = DOMPurify.sanitize(updatedWords);
     streamerDone = streamerWords.length === 0;
     if (streamerDone) {
       streamerFirstKey = true;

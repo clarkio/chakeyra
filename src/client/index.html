@@ -1,45 +1,43 @@
-  
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chakeyra</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/dompurify/dist/purify.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chakeyra</title>
-  <link rel="stylesheet" href="./styles.css">
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
-</head>
-
-<body>
-  <div class="grid-container">
-    <div class="header">Welcome to Chakeyra</div>
-    <div class="player-area" id="player-area">Players:
-      <div class="playerCount" id="playerCount">
-        <span id="playerCountInfo">No chat players</span>
+  <body>
+    <div class="grid-container">
+      <div class="header">Welcome to Chakeyra</div>
+      <div class="player-area" id="player-area">
+        Players:
+        <div class="playerCount" id="playerCount">
+          <span id="playerCountInfo">No chat players</span>
+        </div>
+        <div class="players" id="playerList"></div>
       </div>
-      <div class="players" id="playerList">
+      <div class="menu">
+        Menu<br />
+        <p><button onclick="startGame()" id="start">Start</button></p>
+        <p>Restart</p>
+        <p><button onclick="stop()" id="stop">Stop</button></p>
       </div>
+      <div class="streamer">
+        <h3>Streamer Words</h3>
+        <label id="streamer-timer"></label>
+      </div>
+      <div class="chat">
+        <h3>Chat Words</h3>
+        <label id="chat-timer"></label>
+      </div>
+      <div id="streamer-words" class="streamer-words"></div>
+      <div id="chat-words" class="chat-words"></div>
     </div>
-    <div class="menu">
-      Menu<br>
-      <p><button onclick="startGame()" id="start">Start</button></p>
-      <p>Restart</p>
-      <p><button onclick="stop()" id="stop">Stop</button></p>
-    </div>
-    <div class="streamer">
-      <h3>Streamer Words</h3>
-      <label id="streamer-timer"></label>
-    </div>
-    <div class="chat">
-      <h3>Chat Words</h3>
-      <label id="chat-timer"></label>
-    </div>
-    <div id="streamer-words" class="streamer-words"></div>
-    <div id="chat-words" class="chat-words"></div>
-  </div>
-</body>
-<script src="index.js"></script>
-<script src="chat.js"></script>
-
+  </body>
+  <script src="index.js"></script>
+  <script src="chat.js"></script>
 </html>
