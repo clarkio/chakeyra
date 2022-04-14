@@ -50,7 +50,8 @@ function startGame() {
 
       document.getElementById('chat-words').innerHTML = chatWords.join(' ');
       // chatCharacters = chatWords.split('');
-    });
+    })
+    .catch((error) => console.error(error));
 }
 
 function startKeyCaptureDelay() {
