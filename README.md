@@ -1,8 +1,15 @@
+<div align="center">
+  
 # chakeyra
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-A live streaming game where the streamer and viewers in chat compete to typing challenges
+
+[![Known Vulnerabilities](https://snyk.io/test/github/clarkio/chakeyra/badge.svg)](https://snyk.io/test/github/clarkio/chakeyra)
+![GitHub](https://img.shields.io/github/license/clarkio/chakeyra)
+![Discord](https://img.shields.io/discord/421902136457035777)
+![Twitch Status](https://img.shields.io/twitch/status/clarkio)
+
+</div>
+
+A live streaming game where the streamer and viewers in chat compete in a typing speed challenge
 
 Thanks to @timothee for the name of this game 😆🙏
 
@@ -11,6 +18,9 @@ This game was built with 💙 live on stream with the programming community. Com
 
 > https://twitch.tv/clarkio
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ### Prerequisites
 
