@@ -4,8 +4,8 @@
 
 [![Known Vulnerabilities](https://snyk.io/test/github/clarkio/chakeyra/badge.svg)](https://snyk.io/test/github/clarkio/chakeyra)
 ![GitHub](https://img.shields.io/github/license/clarkio/chakeyra)
-![Discord](https://img.shields.io/discord/421902136457035777)
-![Twitch Status](https://img.shields.io/twitch/status/clarkio)
+[![Discord](https://img.shields.io/discord/421902136457035777)](https://discord.gg/xB95beJ)
+[![Twitch Status](https://img.shields.io/twitch/status/clarkio)](https://twitch.tv/clarkio)
 
 </div>
 
