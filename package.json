@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.26.1",
-    "comfy.js": "^1.1.13",
+    "comfy.js": "^1.1.15",
     "dompurify": "^2.3.6",
     "dotenv": "^8.6.0",
     "express": "^4.17.3",
