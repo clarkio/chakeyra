@@ -1,4 +1,4 @@
-FROM node:18.18.1-alpine
+FROM node:18.20.1-alpine
 WORKDIR /src
 COPY package.json package-lock.json /src/
 RUN npm install --production
